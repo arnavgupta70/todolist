@@ -1,8 +1,8 @@
 Hi!
 
-In this file, I will be explaining the usage for my CS50x Final Project - "ToDoList".
+In this file, I will be explaining the usage for my Project - "ToDoList".
 
-"ToDoList" is a website which allows the user to create tasks which they need to complete and the specific date they plan on completing the task.
+"ToDoList" is currently a website based tracker which allows the user to create tasks which they need to complete and the specific date they plan on completing the task. After fully completing the project, I plan in converting this project into an application.
 
 When you run the application using "flask run", the Homepage loads. If you are a first-time user, you will have to register for an account first.
 The username and password can be anything of your choices however, the password must be atleast 8 characters with a letter and a number.
