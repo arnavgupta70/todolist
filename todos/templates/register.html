@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+
+        <!-- Creates Input for username -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" id="username" placeholder="Username" type="text">
+        </div>
+
+        <!-- Creates Input for Password -->
+        <div class="form-group">
+
+            <br><p class='error'>Must contain at least 8 characters, <br> including a letter and a number</p>
+
+            <input class="form-control" name="password" id="pass" placeholder="Password" type="password">
+        </div>
+
+        <!-- Creates Input for Confirm Password -->
+        <div class="form-group">
+            <input class="form-control" name="confirmation" id="confirm-pass" placeholder="Confirm Password" type="password">
+        </div>
+
+        <!-- Creates Button to allow user to Register -->
+        <button class="btn btn-primary" id="register" type="submit">Register</button>
+    </form>
+
+    <script>
+
+        // Sets the Register button to hidden
+        document.querySelector("#register").disabled = true;
+
+        // After every time a key is pressed, check this function
+        document.querySelector("#pass").onkeyup = function() {
+
+            // Set value of "key" equal to user-input in "password"
+            let key = document.querySelector("#pass").value;
+
+            // Check if user-input in "password" is atleast 8 characters with Letters and Numbers
+            if ((key.length > 7) && (key.match(/^[0-9a-z]+$/i)) && (key.match(/\d/)) && (key.match(/[a-z]/i)))
+            {
+                // Set "Register" button to visible
+                document.querySelector('#register').disabled = false;
+            }
+
+            else
+            {
+                // Set the Register button to hidden
+                document.querySelector('#register').disabled = true;
+            }
+        }
+    </script>
+{% endblock %}

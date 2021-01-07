@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Completed A Task
+{% endblock %}
+
+{% block main %}
+    <form action="/updatetasks" method="post">
+
+        <div class="form-group">
+
+            <select id="stock" name="task">
+            {% for key, value in stocks.items() %}
+                <option value={{ key }}> {{ key }}, started {{ value }}</option>
+            {% endfor %}
+            </select>
+        </div>
+
+        <button id="submit" class="btn btn-primary" type="submit">Mark As Complete</button>
+    </form>
+{% endblock %}

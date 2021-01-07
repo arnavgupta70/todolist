@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Tasks
+{% endblock %}
+
+{% block main %}
+    <form action="/addtasks" method="post">
+
+        <!-- Creates "Text Box" for user to input task -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="tasks" name="tasks" placeholder="Task Name" type="text">
+        </div>
+
+        <!-- Creates "Drop Down" for calendar -->
+        <label>
+            <input type="date" id="completion" name="completion">
+        </label>
+
+        <!-- Inserts 2 line breaks -->
+        <br>
+        <br>
+
+        <!-- Creates "Add Item" button -->
+        <button class="btn btn-primary" id="add" type="submit">Add Item</button>
+    </form>
+
+    <script>
+
+        // Sets the "Add" button to hidden
+        document.querySelector("#add").disabled = true;
+
+        // After every time a key is pressed, check this function
+        document.querySelector("#tasks").onkeyup = function() {
+
+            // Set value of "key" equal to user-input in "password"
+            let key = document.querySelector("#tasks").value;
+
+            // Check if user-input in "password" is atleast 8 characters with Letters and Numbers
+            if ((key.length >= 1) && (key.match(/[a-z]/i)))
+            {
+                // Set "Add" button to visible
+                document.querySelector('#add').disabled = false;
+            }
+
+            else
+            {
+                // Set the "Add" button to hidden
+                document.querySelector('#add').disabled = true;
+            }
+        }
+    </script>
+{% endblock %}

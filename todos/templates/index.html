@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tasks
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+
+        <!-- Used to group header content in an HTML Table. -->
+        <thead>
+
+            <!-- Defines a row in an HTML table. -->
+            <tr>
+
+                <!-- Defines header cell in an HTML table. -->
+                <th scope="col">To-Do Item</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col"></th>
+            </tr>
+
+        </thead>
+
+        <!-- Used to group body content in an HTML Table. -->
+        <tbody>
+
+            <h4>Once a task is complete, click Update Tasks</h4>
+
+            <br>
+
+            <!-- Iterates over "stocks". -->
+            {% for stock in stocks %}
+                <tr>
+                    <th scope="row"><center>{{ stock[0] }}</center></th>
+
+                    <!-- Defines a cell in an HTML table. -->
+                    <td><center>{{ stock[1] }}</center></td>
+                    <td><center>{{ stock[2] }}</center></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
