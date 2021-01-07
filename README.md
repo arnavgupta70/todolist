@@ -21,8 +21,12 @@ at the top of the screen congratulating you completing the task.
 If you want to see all the tasks you have completed, click on "Completed Tasks" in the Header. This will redirect you to another screen which will,
 similar to the Homepage, have a table displaying all the tasks you have completed, the day you started and the day you completed the task.
 
-****************************** To return from any screen to the Homepage, just click the "ToDoList" in the Header ******************************
+To return from any screen to the Homepage, just click the "ToDoList" in the Header
 
 To Logout, click on "Logout" in the top right corner of the Header.
 
 This is my website, hope you enjoy it!
+
+## ToDo
+1. update program such that user must sign up with their email.
+2. once step 1 is done, send reminder to the email provided when completion date of a task is approaching.
